@@ -10,6 +10,9 @@ COPY . .
 # Install dependencies
 RUN npm install
 
+# Run migrations
+RUN npx prisma migrate deploy
+
 # Expose the port the app runs on
 EXPOSE 5000
 

@@ -10,11 +10,11 @@ COPY . .
 # Install dependencies
 RUN npm install
 
-# Run migrations
-RUN npx prisma migrate deploy
-
 # Expose the port the app runs on
 EXPOSE 5000
 
+# Set file permissions
+RUN chmod +x /app/scripts/start-app.sh
+
 # Command to run the app
-CMD ["npm", "run", "start"]
+CMD ["/app/scripts/start-app.sh"]

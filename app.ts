@@ -9,7 +9,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Add routers
 app.use('/api/courses', coursesRouter)
 
 app.listen(PORT, () => {
